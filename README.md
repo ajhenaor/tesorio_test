@@ -1,13 +1,13 @@
 # Tesorio test
 
 ## DB Connection
-The admin panel can be accessed trough `localhost:8080`. The credentials to access the DB are:
+The Postgres database can be accessed trough `localhost:8080`. The access credentials the DB are:
 
 ```
-host= 'db'
-dbname= 'tesorio'
-user= 'postgres'
+server= 'db'
+username= 'postgres'
 password= 'postgres'
+dbname= 'tesorio'
 ```
 
 ## Deployment
@@ -17,10 +17,6 @@ sudo docker-compose down && sudo docker-compose build --pull && sudo docker-comp
 ```
 
 The project comprises two endpoints:
-* localhost:5000/save_data: Endpoint expecting a TXT file in order to insert it in the Postgres DB. Next is an example of a valid request to the endpoint
-```
-curl --location --request GET 'http://localhost:5000/save_data' \
---header 'Content-Type: application/json' \
---form 'myfile= [insert path to txt file]'
-```
+* localhost:5000/save_data: Endpoint expecting a TXT file. Next you can find an example of a valid request to the endpoint
+![Postman request](/temp/postman_request.png)
 * localhost:5000/clean_db: Endpoint to clear the data uploaded so far
